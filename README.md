@@ -15,56 +15,35 @@ Usage example:
 
 ### Install
 
-[node-gyp](https://www.npmjs.com/package/node-gyp) is required to install [bluetooth-serial-port](https://www.npmjs.com/package/bluetooth-serial-port) dependency. It requires working compiler installed on you system.
-See [node-gyp](https://github.com/nodejs/node-gyp#on-unix) and [bluetooth-serial-port](https://github.com/eelcocramer/node-bluetooth-serial-port?tab=readme-ov-file#prerequisites-on-linux) installation.
+[node-gyp](https://www.npmjs.com/package/node-gyp) is required to install [bluetooth-serial-port](https://www.npmjs.com/package/bluetooth-serial-port) dependency.
+It requires working compiler installed on your system.
+
+See [node-gyp](https://github.com/nodejs/node-gyp?tab=readme-ov-file#on-unix) and [bluetooth-serial-port](https://github.com/eelcocramer/node-bluetooth-serial-port?tab=readme-ov-file#prerequisites-on-linux) installation.
 
 ### Command-line usage
+
+While development:
+
+```bash
+yarn cli <options>
+```
+
+If installed as package globally:
+
+```bash
+niimblue-cli <options>
+```
 
 Available options:
 
 ```bash
-node cli.mjs help
-```
-
-```
-Usage: niimblue-cli print [options] <path>
-
-Prints image
-
-Arguments:
-  path                     Image path
-
-Options:
-  -d, --debug              Debug information (default: false)
-  -t, --transport <type>   Transport (choices: "bluetooth", "serial")
-  -a, --address <string>   Device bluetooth address or serial port name/path
-  -o, --direction <dir>    Print direction (choices: "left", "top")
-  -p, --print-task <type>  Print task (choices: "D11_V1", "D110", "B1", "B21_V1", "V5")
-  -q, --quantity <number>  Quantity (default: 1)
-  -h, --help               display help for command
-```
-
-```
-Usage: niimblue-cli info [options]
-
-Printer information
-
-Options:
-  -d, --debug             Debug information (default: false)
-  -t, --transport <type>  Transport (choices: "bluetooth", "serial")
-  -a, --address <string>  Device bluetooth address or serial port name/path
-  -h, --help              display help for comman
+niimblue-cli help print
+niimblue-cli help info
 ```
 
 #### Examples
 
 B1 serial:
-
-```bash
-node cli.mjs print -d -t serial -a COM8 -o top label_15x30.png
-```
-
-Or if package installed:
 
 ```bash
 niimblue-cli print -d -t serial -a COM8 -o top label_15x30.png
@@ -73,11 +52,11 @@ niimblue-cli print -d -t serial -a COM8 -o top label_15x30.png
 B1 Bluetooth:
 
 ```bash
-node cli.mjs print -d -t bluetooth -a 07:27:03:17:6E:82 -o top label_15x30.png
+niimblue-cli print -d -t bluetooth -a 07:27:03:17:6E:82 -o top label_15x30.png
 ```
 
 D110 Bluetooth:
 
 ```bash
-node cli.mjs print -d -t bluetooth -a 03:26:03:C3:F9:11 -o left label_15x30.png
+niimblue-cli print -d -t bluetooth -a 03:26:03:C3:F9:11 -o left label_15x30.png
 ```

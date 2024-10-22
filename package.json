@@ -16,8 +16,7 @@
   "scripts": {
     "clean-build": "yarn clean && yarn build",
     "build": "tsc --build",
-    "test-bluetooth": "yarn build && node utils/test-bluetooth.mjs",
-    "test-serial": "yarn build && node utils/test-serial.mjs"
+    "cli": "tsc --build && node cli.mjs"
   },
   "devDependencies": {
     "@types/node": "^20.14.2",
