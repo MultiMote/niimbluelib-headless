@@ -14,6 +14,10 @@ Usage example:
 * [utils/test-serial.mjs](utils/test-serial.mjs) (run with `yarn test-serial`)
 * [utils/test-bluetooth.mjs](utils/test-bluetooth.mjs) (run with `yarn test-bluetooth`)
 
+### Install
+
+[node-gyp](https://www.npmjs.com/package/node-gyp) is required to install [bluetooth-serial-port](https://www.npmjs.com/package/bluetooth-serial-port) dependency. It requires working compiler installed on you system.
+See [node-gyp](https://github.com/nodejs/node-gyp#on-unix) and [bluetooth-serial-port](https://github.com/eelcocramer/node-bluetooth-serial-port?tab=readme-ov-file#prerequisites-on-linux) installation.
 
 ### Command-line usage
 
@@ -46,5 +50,3 @@ D110 Bluetooth:
 ```bash
 node cli.mjs print -d -t bluetooth -a 03:26:03:C3:F9:11 -o left label_15x30.png
 ```
-
-
