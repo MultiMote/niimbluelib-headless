@@ -27,6 +27,12 @@ type PrintOptions = {
   quantity: number;
 };
 
+type InfoOptions = {
+  transport: ConnectionType;
+  address: string;
+  debug: boolean;
+};
+
 const initClient = (transport: ConnectionType, address: string, debug: boolean): NiimbotAbstractClient => {
   let client = null;
   if (transport === "serial") {
@@ -112,7 +118,26 @@ const intOption = (value: string): number => {
   return parsed;
 };
 
+const printerInfo = async (options: InfoOptions) => {
+  const client: NiimbotAbstractClient = initClient(options.transport, options.address, options.debug);
+  await client.connect();
+  console.log("Printer info:", client.getPrinterInfo());
+  console.log("Model metadata:", client.getModelMetadata());
+  console.log("Detected print task:", client.getPrintTaskType());
+  await client.disconnect();
+};
+
 program
+  .command("info")
+  .description("Printer information")
+  .option("-d, --debug", "Debug information", false)
+  .addOption(
+    new Option("-t, --transport <type>", "Transport")
+      .makeOptionMandatory()
+      .choices(["bluetooth", "serial"] as ConnectionType[])
+  )
+  .requiredOption("-a, --address <string>", "Device bluetooth address or serial port name/path")
+  .action(printerInfo)
   .command("print")
   .description("Prints image")
   .argument("<path>", "Image path")
