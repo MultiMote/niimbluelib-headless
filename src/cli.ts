@@ -137,7 +137,9 @@ program
       .choices(["bluetooth", "serial"] as ConnectionType[])
   )
   .requiredOption("-a, --address <string>", "Device bluetooth address or serial port name/path")
-  .action(printerInfo)
+  .action(printerInfo);
+
+program
   .command("print")
   .description("Prints image")
   .argument("<path>", "Image path")
