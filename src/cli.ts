@@ -128,6 +128,9 @@ const printerInfo = async (options: InfoOptions) => {
 };
 
 program
+  .name("niimblue-cli");
+
+program
   .command("info")
   .description("Printer information")
   .option("-d, --debug", "Debug information", false)

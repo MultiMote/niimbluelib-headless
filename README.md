@@ -24,8 +24,40 @@ See [node-gyp](https://github.com/nodejs/node-gyp#on-unix) and [bluetooth-serial
 Available options:
 
 ```bash
-node cli.mjs help print
+node cli.mjs help
 ```
+
+```
+Usage: niimblue-cli print [options] <path>
+
+Prints image
+
+Arguments:
+  path                     Image path
+
+Options:
+  -d, --debug              Debug information (default: false)
+  -t, --transport <type>   Transport (choices: "bluetooth", "serial")
+  -a, --address <string>   Device bluetooth address or serial port name/path
+  -o, --direction <dir>    Print direction (choices: "left", "top")
+  -p, --print-task <type>  Print task (choices: "D11_V1", "D110", "B1", "B21_V1", "V5")
+  -q, --quantity <number>  Quantity (default: 1)
+  -h, --help               display help for command
+```
+
+```
+Usage: niimblue-cli info [options]
+
+Printer information
+
+Options:
+  -d, --debug             Debug information (default: false)
+  -t, --transport <type>  Transport (choices: "bluetooth", "serial")
+  -a, --address <string>  Device bluetooth address or serial port name/path
+  -h, --help              display help for comman
+```
+
+#### Examples
 
 B1 serial:
 
