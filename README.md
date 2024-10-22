@@ -1,8 +1,8 @@
-## niimbluelib-headless
+## NiimBlueLib-Headless
 
-niimbluelib client implementations for not-browser use.
+[niimbluelib](https://github.com/MultiMote/niimbluelib) client implementations for not-browser use.
 
-Tested environment:
+Tested with:
 
 * Windows 10
 * Bluetooth adapter (TP-LINK UB500)
@@ -11,8 +11,7 @@ Tested environment:
 
 Usage example:
 
-* [utils/test-serial.mjs](utils/test-serial.mjs) (run with `yarn test-serial`)
-* [utils/test-bluetooth.mjs](utils/test-bluetooth.mjs) (run with `yarn test-bluetooth`)
+* [src/cli.ts](src/cli.ts)
 
 ### Install
 
