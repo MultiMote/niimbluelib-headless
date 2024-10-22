@@ -41,4 +41,10 @@ B1 Bluetooth:
 node cli.mjs print -d -t bluetooth -a 07:27:03:17:6E:82 -o top label_15x30.png
 ```
 
+D110 Bluetooth:
+
+```bash
+node cli.mjs print -d -t bluetooth -a 03:26:03:C3:F9:11 -o left label_15x30.png
+```
+
 
